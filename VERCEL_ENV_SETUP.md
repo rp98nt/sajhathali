@@ -7,12 +7,12 @@ Go to your Vercel project settings → Environment Variables and add these:
 ### Database (Neon)
 **Pooled Connection (Recommended for Vercel):**
 ```
-DATABASE_URL=postgresql://neondb_owner:npg_omMO9wpaWsY7@ep-small-bread-ad5qocb5-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL=postgresql://USER:PASSWORD@YOUR-POOLER-HOST.neon.tech/neondb?sslmode=require
 ```
 
 **Direct Connection (Optional, for migrations):**
 ```
-DATABASE_URL_UNPOOLED=postgresql://neondb_owner:npg_omMO9wpaWsY7@ep-small-bread-ad5qocb5.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL_UNPOOLED=postgresql://USER:PASSWORD@YOUR-DIRECT-HOST.neon.tech/neondb?sslmode=require
 ```
 
 ### JWT Secret
@@ -41,7 +41,7 @@ NODE_ENV=production
 5. Redeploy: Go to Deployments → Click "..." on latest → "Redeploy"
 
 ## Important Notes:
-- The `DATABASE_URL` provided above is specific to your new Neon project.
+- Replace the placeholder `DATABASE_URL` values with your own Neon connection strings from the Neon dashboard (never commit real credentials to git).
 - Change `JWT_SECRET` to a random secure string for production.
 - SMTP variables are optional but needed for email notifications.
 
