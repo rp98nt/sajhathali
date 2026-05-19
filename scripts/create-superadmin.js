@@ -32,7 +32,7 @@ const bcrypt = require('bcryptjs');
 const prisma = new PrismaClient();
 
 const adminEmail =
-  process.env.SUPERADMIN_EMAIL?.trim() || 'admin@example.com';
+  process.env.SUPERADMIN_EMAIL?.trim() || 'admin@mealnetworks.com';
 
 async function hashPassword(password) {
   return bcrypt.hash(password, 12);

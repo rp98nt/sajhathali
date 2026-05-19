@@ -1,7 +1,7 @@
 # User Authentication System Requirements
 
 ## Overview
-Implementation of a role-based authentication system for the food donation platform with three distinct user types and an approval workflow.
+Implementation of a role-based authentication system for the MealNetworks food donation platform with three distinct user types and an approval workflow.
 
 ## User Roles
 

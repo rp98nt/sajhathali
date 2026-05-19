@@ -16,7 +16,7 @@ This application uses Google Maps API for location-based features, including:
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
 2. Click **Select a project** → **New Project**
-3. Name your project (e.g., "SajhaThali Food Donation")
+3. Name your project (e.g., "MealNetworks Food Donation")
 4. Click **Create**
 
 ### 2. Enable Required APIs

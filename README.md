@@ -1,4 +1,4 @@
-# Sajhathali (food donation)
+# MealNetworks (food donation)
 
 Next.js app that connects food donors and receivers (NGOs), with Prisma and PostgreSQL (e.g. [Neon](https://neon.tech)).
 
@@ -16,7 +16,7 @@ See **`docs/DEPLOYMENT.md`** for the full **GitHub → Vercel → Neon** checkli
 
 ## Scripts
 
-- **`node scripts/create-superadmin.js`** — creates or resets the first `SUPERADMIN` (email from `SUPERADMIN_EMAIL` in `.env`; default `admin@example.com`). Change the default password after first login.
+- **`node scripts/create-superadmin.js`** — creates or resets the first `SUPERADMIN` (email from `SUPERADMIN_EMAIL` in `.env`, default `admin@mealnetworks.com`). Change the default password after first login.
 
 ## Docs
 

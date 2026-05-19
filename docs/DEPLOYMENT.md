@@ -27,8 +27,8 @@ You can use a **new** Vercel account and a **new** Neon project without changing
 | `DATABASE_URL` | Neon pooled connection string |
 | `DATABASE_URL_UNPOOLED` | Optional; direct Neon URL for migrations from CI or local |
 | `JWT_SECRET` | Long random string |
-| `NEXT_PUBLIC_APP_NAME` | Shown in UI and emails (e.g. `Sajhathali`) |
-| `NEXT_PUBLIC_SUPPORT_EMAIL` | Public contact email on Contact page |
+| `NEXT_PUBLIC_APP_NAME` | Shown in UI and emails (e.g. `MealNetworks`) |
+| `NEXT_PUBLIC_SUPPORT_EMAIL` | Optional; public contact email |
 | `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | If you use maps; see `docs/GOOGLE_MAPS_SETUP.md` |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | Optional; for outgoing mail |
 

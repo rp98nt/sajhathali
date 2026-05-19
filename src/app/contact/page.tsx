@@ -1,10 +1,6 @@
 import { Typography, Paper, Box } from "@mui/material";
 import MainContainer from "@/components/MainContainer";
 
-const supportEmail =
-  process.env.NEXT_PUBLIC_SUPPORT_EMAIL?.trim() ||
-  "Set NEXT_PUBLIC_SUPPORT_EMAIL in your environment";
-
 export default function ContactPage() {
   return (
     <MainContainer>
@@ -20,7 +16,7 @@ export default function ContactPage() {
             <Typography>Sanjana S. Nikam       +91 84858 34335</Typography>
             <Typography>Shweta Rathod          +91 73879 85971</Typography>
             <Typography>Amruta Sagre           +91 88568 08106</Typography>
-            <Typography>Email: {supportEmail}</Typography>
+            <Typography>Email: mealnetworks@gmail.com</Typography>
           </Paper>
         </Box>
 
