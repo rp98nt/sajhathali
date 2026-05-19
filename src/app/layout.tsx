@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Varela_Round } from "next/font/google";
 import "./globals.css";
 import ThemeRegistry from "@/components/ThemeRegistry";
 import Navbar from "@/components/Navbar";
+import { appName } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,7 @@ const varelaRound = Varela_Round({
 });
 
 export const metadata: Metadata = {
-  title: "MealNetworks - Food Donation Platform",
+  title: `${appName} — Food donation platform`,
   description: "Connect donors with NGOs to reduce food waste and fight hunger",
 };
 

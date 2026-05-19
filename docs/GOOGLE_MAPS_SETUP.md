@@ -77,14 +77,12 @@ NEXT_PUBLIC_GOOGLE_MAPS_API_KEY="YOUR_API_KEY_HERE"
 
 ### 6. Configure Vercel Environment Variables (for Production)
 
-1. Go to your Vercel project dashboard
-2. Navigate to **Settings** → **Environment Variables**
-3. Add:
-   - **Name**: `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`
-   - **Value**: Your Google Maps API key
-   - **Environment**: Production, Preview, Development (select all)
-4. Click **Save**
-5. Redeploy your application
+Use the same Vercel project env vars as in `docs/DEPLOYMENT.md`. At minimum add:
+
+1. Open your Vercel project → **Settings** → **Environment Variables**
+2. Add **`NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`** with your Google Maps API key
+3. Select **Production**, **Preview**, and **Development** as needed
+4. **Save** and **Redeploy**
 
 ## Usage Limits & Cost Management
 

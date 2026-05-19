@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import { UserRole } from '@prisma/client';
+import { appName } from '@/config/site';
 
 const SMTP_HOST = process.env.SMTP_HOST || 'smtp.gmail.com';
 const SMTP_PORT = parseInt(process.env.SMTP_PORT || '587');
@@ -41,10 +42,10 @@ function getWelcomeEmailTemplate(user: EmailUser): { subject: string; html: stri
   const roleText = user.role === 'DONOR' ? 'Food Donor' : 'Food Receiver';
 
   return {
-    subject: `Welcome to MealNetworks - Your ${roleText} Account is Approved!`,
+    subject: `Welcome to ${appName} - Your ${roleText} Account is Approved!`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #2c5aa0;">Welcome to MealNetworks!</h2>
+        <h2 style="color: #2c5aa0;">Welcome to ${appName}!</h2>
         <p>Dear ${user.firstName} ${user.lastName},</p>
         <p>Congratulations! Your account as a <strong>${roleText}</strong> has been approved and is now active.</p>
         <p>You can now log in to your account and start ${user.role === 'DONOR' ? 'donating food to help those in need' : 'receiving food donations for your organization'}.</p>
@@ -57,7 +58,7 @@ function getWelcomeEmailTemplate(user: EmailUser): { subject: string; html: stri
           </ul>
         </div>
         <p>Thank you for joining our mission to reduce food waste and help those in need.</p>
-        <p>Best regards,<br>The MealNetworks Team</p>
+        <p>Best regards,<br>The ${appName} Team</p>
       </div>
     `
   };
@@ -82,7 +83,7 @@ function getDonorSessionEmailTemplate(data: SessionEmailData): { subject: string
         </div>
         <p>Please coordinate with the receiver to complete the donation. You can track this session using the Session ID: <strong>${data.sessionId}</strong></p>
         <p>Thank you for your generous contribution!</p>
-        <p>Best regards,<br>The MealNetworks Team</p>
+        <p>Best regards,<br>The ${appName} Team</p>
       </div>
     `
   };
@@ -107,7 +108,7 @@ function getReceiverSessionEmailTemplate(data: SessionEmailData): { subject: str
         </div>
         <p>Please coordinate with the donor to arrange pickup or delivery. You can track this session using the Session ID: <strong>${data.sessionId}</strong></p>
         <p>Thank you for your important work in helping those in need!</p>
-        <p>Best regards,<br>The MealNetworks Team</p>
+        <p>Best regards,<br>The ${appName} Team</p>
       </div>
     `
   };
@@ -116,15 +117,15 @@ function getReceiverSessionEmailTemplate(data: SessionEmailData): { subject: str
 // Account blocked email
 function getAccountBlockedEmailTemplate(user: EmailUser): { subject: string; html: string } {
   return {
-    subject: 'MealNetworks Account - Access Temporarily Suspended',
+    subject: `${appName} Account - Access Temporarily Suspended`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #dc3545;">Account Access Suspended</h2>
         <p>Dear ${user.firstName} ${user.lastName},</p>
-        <p>We regret to inform you that your MealNetworks account access has been temporarily suspended.</p>
+        <p>We regret to inform you that your ${appName} account access has been temporarily suspended.</p>
         <p>If you believe this is an error or would like to appeal this decision, please contact our support team.</p>
         <p>We appreciate your understanding.</p>
-        <p>Best regards,<br>The MealNetworks Team</p>
+        <p>Best regards,<br>The ${appName} Team</p>
       </div>
     `
   };
@@ -133,14 +134,14 @@ function getAccountBlockedEmailTemplate(user: EmailUser): { subject: string; htm
 // Account enabled email
 function getAccountEnabledEmailTemplate(user: EmailUser): { subject: string; html: string } {
   return {
-    subject: 'MealNetworks Account - Access Restored',
+    subject: `${appName} Account - Access Restored`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #28a745;">Account Access Restored</h2>
         <p>Dear ${user.firstName} ${user.lastName},</p>
-        <p>Good news! Your MealNetworks account access has been restored and you can now log in normally.</p>
+        <p>Good news! Your ${appName} account access has been restored and you can now log in normally.</p>
         <p>Thank you for your patience and continued participation in our platform.</p>
-        <p>Best regards,<br>The MealNetworks Team</p>
+        <p>Best regards,<br>The ${appName} Team</p>
       </div>
     `
   };

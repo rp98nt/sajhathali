@@ -6,6 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useState, useEffect } from "react";
 import LoginModal from "./LoginModal";
+import { appName } from "@/config/site";
 
 // Public links (for non-authenticated users)
 const publicLinks = [
@@ -121,8 +122,8 @@ export default function Navbar() {
           <Toolbar sx={{ display: "flex", justifyContent: "space-between", px: { xs: 2, md: 0 } }}>
             <Box component={Link} href={user ? getDashboardLink() : "/"} sx={{ display: "flex", alignItems: "center", textDecoration: "none", gap: 2 }}>
               <Image
-                src="/images/Logo_MealNetworks3.png"
-                alt="MealNetworks"
+                src="/images/logo.png"
+                alt={appName}
                 width={56}
                 height={56}
                 style={{ borderRadius: 4 }}
@@ -136,7 +137,7 @@ export default function Navbar() {
                   letterSpacing: "0.5px"
                 }}
               >
-                MEAL NETWORKS
+                {appName.toUpperCase()}
               </Typography>
             </Box>
 
