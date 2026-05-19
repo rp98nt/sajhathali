@@ -40,7 +40,18 @@ Apply to **Production** (and **Preview** if you use previews).
    npx prisma migrate deploy
    ```
 
-7. Optional: create the first superadmin (with `.env` containing the new `DATABASE_URL` and `SUPERADMIN_EMAIL`):
+7. Add **`JWT_SECRET`** (random string) and **`BOOTSTRAP_SECRET`** (random string) in Vercel env vars. Optional: **`SUPERADMIN_EMAIL`** (default `admin@mealnet.in`).
+
+8. After deploy, apply schema (included in `npm run build` via `prisma migrate deploy`) and create the superadmin:
+
+   ```bash
+   curl -X POST https://YOUR_DOMAIN/api/admin/bootstrap \
+     -H "x-bootstrap-secret: YOUR_BOOTSTRAP_SECRET"
+   ```
+
+   Default login: `admin@mealnet.in` / `admin123` — change the password after first login.
+
+   **Local alternative** (with real `DATABASE_URL` in `.env`):
 
    ```bash
    node scripts/create-superadmin.js

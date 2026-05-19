@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "node scripts/resolve-db-url.js && prisma generate && prisma migrate deploy && next build",
+    "db:migrate": "prisma migrate deploy",
+    "db:superadmin": "node scripts/create-superadmin.js",
     "start": "next start",
     "lint": "eslint",
     "postinstall": "prisma generate"
